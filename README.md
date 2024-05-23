@@ -4,7 +4,7 @@ A plugin for oXygen XML Editor and scripts for Mac and Windows to register oXyge
 
 ## Installation
 
-1. Download the [latest release](https://github.com/shabanovd/oxygenxml-webdav/releases).
+1. Download the [latest release](https://github.com/Jorsek/oxygenxml-webdav/releases).
 2. Unzip the release and copy the resulting `webdav` directory into oXygen's `plugins` folder.
 3. Run installation script
     - On Mac, open Terminal, run `cd /Applications/oXygen/plugins/webdav/bin` and then `./setup_osx_webdav.sh`
