@@ -10,7 +10,11 @@ import java.net.URLConnection;
 public class WebDAV_Handler extends ro.sync.net.protocol.http.Handler {
 
     public URLConnection openConnection(URL u) throws IOException {
-        URL url = new URL("http" + u.toString().substring(6));
-        return super.openConnection(url);
+        String protocol = u.getProtocol();
+        if (URLHandler.EDIT_IN_OXYGEN.equals(protocol)) {
+          return super.openConnection(new URL(u.toString().substring(protocol.length() + 1)));
+        }
+
+        return super.openConnection(u);
     }
 }

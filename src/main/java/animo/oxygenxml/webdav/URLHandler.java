@@ -11,10 +11,11 @@ public class URLHandler implements URLStreamHandlerPluginExtension {
 
     public static final String WEBDAV = "webdav";
     public static final String WEBDAVS = "webdavs";
+    public static final String EDIT_IN_OXYGEN="edit-in-oxygen";
 
     @Override
     public URLStreamHandler getURLStreamHandler(String protocol) {
-        if (WEBDAV.equals(protocol) || WEBDAVS.equals(protocol)) {
+        if (EDIT_IN_OXYGEN.equals(protocol)) {
             return new WebDAV_Handler();
         }
 
