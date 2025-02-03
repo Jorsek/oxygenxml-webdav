@@ -1,9 +1,16 @@
 @echo off
-:: register Edit in Oxygen registry handler entries
-:: run by passing in the following parameters,
+:: register edit-in-oxygen registry handler entries
+:: run this script by passing in the following parameters,
 ::   1. type: one of "editor" or "author"
-::   2. version number: ex: 27.0
-:: execution example: reg.bat editor 26.1
+::   2. version number, include major and minor version: ex: 27.0
+:: example: register_edit_in_oxygen.bat editor 27.0
+
+:: check for admin privileges
+net session >nul 2>&1
+if %errorlevel% neq 0 (
+  echo Administrator privileges needed for this script.  Open command prompt with "Run as Administrator", then run this script.
+  exit /b
+)
 
 if "%~1"=="" (
   echo Please provide your Oxygen XML type ^(author or editor^) and a version number ^(e.g., 27.1^).
